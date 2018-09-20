@@ -82,11 +82,11 @@ rpkm1 = pd.read_csv(filename1, index_col=0)
 print('Reading in {}'.format(filename2))
 rpkm2 = pd.read_csv(filename2, index_col=0)
 
-#MLPickle1 = MLPickle1[MLPickle1[1]][0]
-#MLPickle2 = MLPickle2[MLPickle2[1]][0]
+MLPickle1 = MLPickle1[MLPickle1[1]][0]
+MLPickle2 = MLPickle2[MLPickle2[1]][0]
 
-MLPickle1 = MLPickle1[0]
-MLPickle2 = MLPickle2[0]
+#MLPickle1 = MLPickle1[0]
+#MLPickle2 = MLPickle2[0]
 
 MLPickle1 = MLPickle1[~MLPickle1.index.duplicated(keep='first')]
 MLPickle2 = MLPickle2[~MLPickle2.index.duplicated(keep='first')]
