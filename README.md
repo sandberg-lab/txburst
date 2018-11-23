@@ -24,7 +24,7 @@ usage: txburstML.py [-h] [--njobs NJOBS] file
 Maximum likelihood inference of bursting kinetics from scRNA-seq data
 
 **positional arguments:**
-  file           .csv file with allelic-resolution transcript counts
+  file           .csv file with allelic-resolution UMI counts
 
 **optional arguments:**
   -h, --help     show this help message and exit
