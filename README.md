@@ -17,6 +17,8 @@ No further installation is needed.
 
 _txburstML.py_ estimates parameters of bursting kinetics given transcript counts for an allele of a gene.
 
+If you have estimated the allelic transcript counts from the fraction of allelic reads, it is important to consider what is missing data in this case. Genes with expression (reads) but no allelic reads are different from genes without expression (and therefore no allelic reads). We handle the first case as missing data, since it is not possible to assign the expression. In the second case, we replace the NaN with a 0 since there is genuinely no detected expression.
+
 ### Usage
 
 usage: txburstML.py [-h] [--njobs NJOBS] file
