@@ -1,9 +1,10 @@
-# txburst
+# Genomic encoding of transcriptional burst kinetics
 Repository for transcriptional burst kinetics inference and analysis from allelic single-cell RNA-seq described in the article **Genomic encoding of transcriptional burst kinetics** by Anton J. M. Larsson, Per Johnsson, Michael Hagemann-Jensen, Leonard Hartmanis, Omid R. Faridani, Björn Reinius, Åsa Segerstolpe, Chloe M. Rivera, Bing Ren & Rickard Sandberg currently _in press_ at _Nature_.
 
 We will provide Jupyter notebooks that will contain the complete analysis when the article has been published.
 
-## System Requirements for inference and hypothesis testing scripts
+## txburst scripts
+### System Requirements for inference and hypothesis testing scripts
 
 _txburstML.py_, _txburstPL.py_ and _txburstTEST.py_  are all python3 scripts with dependencies:
 
@@ -15,13 +16,13 @@ joblib: 0.11
 ```
 No further installation is needed.
 
-## txburstML.py
+### txburstML.py
 
 _txburstML.py_ estimates parameters of bursting kinetics given transcript counts for an allele of a gene.
 
 If you have estimated the allelic transcript counts from the fraction of allelic reads, it is important to consider what is missing data in this case. Genes with expression (reads) but no allelic reads are different from genes without expression (and therefore no allelic reads). We handle the first case as missing data, since it is not possible to assign the expression. In the second case, we replace the NaN with a 0 since there is genuinely no detected expression. Omitting this step may have severe effects on the quality of the inference.
 
-### Usage
+#### Usage
 
 usage: txburstML.py [-h] [--njobs NJOBS] file
 
@@ -34,7 +35,7 @@ Maximum likelihood inference of bursting kinetics from scRNA-seq data
   -h, --help     show this help message and exit
   --njobs NJOBS  Number of jobs for the parallelization, default 50
 
-### Output 
+#### Output 
 
 _txburstML.py_ outputs a pickled pandas dataframe which for each gene contains an array with three entries [k_on, k_off, k_syn] where the burst frequency = k_on and burst size = k_syn/k_off, and a boolean indicating whether gene passed a rudimentary filtering step based on the quality of the inference procedure. For example:
 
@@ -43,7 +44,7 @@ _txburstML.py_ outputs a pickled pandas dataframe which for each gene contains a
 |gene1 |	[k_on,k_off,k_syn]_gene1	| True	|
 |gene2 |	[k_on,k_off,k_syn]_gene2	| False	|
 
-### Example 
+#### Example 
 ```
 ./txburstML.py UMI_counts.csv
 ```
@@ -53,11 +54,11 @@ The output of this command is a pickled pandas dataframe _UMI_counts_ML.pkl_ whi
 pd.read_pickle('UMI_counts_ML.pkl')
 ```
 
-## txburstPL.py
+### txburstPL.py
 
 _txburstPL.py_ calculates the confidence intervals parameters of bursting kinetics given transcript counts for an allele of a gene. Requires _txburstML.py_ to be run on the dataset to provide input for _txburstPL.py_.
 
-### Usage 
+#### Usage 
 
 usage: txburstPL.py [-h] [--file file] [--njobs NJOBS] [--alpha ALPHA]
                     [--MLFile MLFILE]
@@ -71,7 +72,7 @@ Confidence intervals on parameters of bursting kinetics from scRNA-seq data
   --alpha ALPHA    Alpha significance level (default 0.05)
   --MLFile MLFILE  Maximum Likelihood file (required)
   
-### Output
+#### Output
 
 _txburstML.py_ outputs a pickled pandas dataframe which for each gene has three arrays with the point estimate from _txburstML.py_ and the confidence intervals for burst frequency and size. For example:
 
@@ -80,7 +81,7 @@ _txburstML.py_ outputs a pickled pandas dataframe which for each gene has three 
 |gene1 |	[k_on,k_off,k_syn]_gene1	| [bf_point,bf_lower,bf_upper]_gene1	| [bs_point,bs_lower,bs_upper]_gene1	 |
 |gene2 |	[k_on,k_off,k_syn]_gene2	| [bf_point,bf_lower,bf_upper]_gene2	| [bs_point,bs_lower,bs_upper]_gene2	 |
   
-### Example
+#### Example
   ```
   ./txburstPL.py --file UMI_counts.csv --MLFile UMI_counts_ML.pkl
   ```
@@ -89,11 +90,11 @@ The output of this command is a pickled dataframe _UMI_counts_PL.pkl_ which can 
 pd.read_pickle('UMI_counts_PL.pkl')
 ```
 
-## txburstTEST.py
+### txburstTEST.py
 
 _txburstTEST.py_ performs hypothesis testing for differential burst frequency and size between two experiments. Requires _txburstML.py_ to be run on the dataset to provide input for _txburstTEST.py_.
 
-### Usage 
+#### Usage 
 
 usage: txburstTEST.py [-h] [--file1 file1] [--file2 file2] [--njobs NJOBS]
                       [--ML1 ML1] [--ML2 ML2]
@@ -107,7 +108,7 @@ Hypothesis testing of differences in bursting kinetics from scRNA-seq data
   --njobs NJOBS  Number of jobs for the parallelization, default 50
   --ML1 ML1      Maximum Likelihood file 1 (required)
   --ML2 ML2      Maximum Likelihood file 2 (required)
-### Output
+#### Output
 
 _txburstTEST.py_ outputs a pickled pandas dataframe with the two point estimates from _txburstML.py_ and p-values for the significance tests for differential bursting kinetics. For example:
 
@@ -116,7 +117,7 @@ _txburstTEST.py_ outputs a pickled pandas dataframe with the two point estimates
 |gene1 |	[k_on,k_off,k_syn]_gene1_sample1	| [k_on,k_off,k_syn]_gene1_sample2	| burst frequency pvalue gene1	 | burst size pvalue gene1 |
 |gene2 |	[k_on,k_off,k_syn]_gene2_sample1	| [k_on,k_off,k_syn]_gene2_sample2	| burst frequency pvalue gene2	 | burst size pvalue gene2 |
   
-### Example
+#### Example
   ```
   ./txburstTEST.py --file1 UMI_counts.csv --file2 UMI_counts_2.csv --ML1 UMI_counts_ML.pkl --ML2 UMI_counts_2_ML.pkl
   ```
