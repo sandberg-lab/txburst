@@ -59,7 +59,7 @@ def fold_change_bf_and_bs(vals_1,vals_2, start_estim_1, start_estim_2, name):
         p_bf = 1-chi2.cdf(2*(ll_null_bf - ll_alt_bf),1)
     except ValueError:
         return start_estim_1, start_estim_2, np.nan, np.nan
-    return start_estim_1, start_estim_2, p_bf, p_bs, name
+    return start_estim_1, start_estim_2, p_bf, p_bs
 
 parser = argparse.ArgumentParser(description='Hypothesis testing of differences in bursting kinetics from scRNA-seq data')
 parser.add_argument("--file1", metavar='file1',type=str, nargs=1,help='.csv file 1 with allelic-resolution transcript counts' )
