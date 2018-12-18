@@ -1,5 +1,5 @@
 # Genomic encoding of transcriptional burst kinetics
-Repository for transcriptional burst kinetics inference and analysis from allelic single-cell RNA-seq described in the article **Genomic encoding of transcriptional burst kinetics** by Anton J. M. Larsson, Per Johnsson, Michael Hagemann-Jensen, Leonard Hartmanis, Omid R. Faridani, Björn Reinius, Åsa Segerstolpe, Chloe M. Rivera, Bing Ren & Rickard Sandberg currently _in press_ at _Nature_.
+Repository for transcriptional burst kinetics inference and analysis from allelic single-cell RNA-seq described in the article **Genomic encoding of transcriptional burst kinetics** by Anton J. M. Larsson, Per Johnsson, Michael Hagemann-Jensen, Leonard Hartmanis, Omid R. Faridani, Björn Reinius, Åsa Segerstolpe, Chloe M. Rivera, Bing Ren and Rickard Sandberg currently _in press_ at _Nature_.
 
 We will provide Jupyter notebooks that will contain the complete analysis when the article has been published.
 
