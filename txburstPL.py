@@ -81,7 +81,7 @@ def kon_ll(vals,start_estim):
             if (2*(ll_l[i] - min(ll_l[ll_l > 0])) > cutoff + 0.5) and (ll_l[i] > ll_l[i-1]):
                 break
     except ValueError:
-        return np.array([minimum,np.nan,np.nan]), np.nan
+        return np.array([np.nan,np.nan,np.nan]), np.nan,np.nan
 
     ll_l = ll_l[:i+1]
     ll_l = ll_l[::-1]
@@ -101,7 +101,7 @@ def kon_ll(vals,start_estim):
             if (2*(ll_u[j] - min(ll_u[ll_u > 0])) > cutoff + 0.5) and (ll_u[j] > ll_u[j-1]):
                 break
     except ValueError:
-        return np.array([minimum,np.nan,np.nan]), np.nan
+        return np.array([np.nan,np.nan,np.nan]), np.nan, np.nan
 
     ll_u = ll_u[:j+1]
 
@@ -152,7 +152,7 @@ def burst_size_ll(vals, start_estim):
             if (2*(ll_l[i] - min(ll_l[ll_l > 0])) > cutoff + 0.5) and (ll_l[i] > ll_l[i-1]):
                 break
     except ValueError:
-        return np.array([minimum,np.nan,np.nan]), np.nan
+        return np.array([np.nan,np.nan,np.nan]), np.nan,np.nan
     ll_l = ll_l[:i+1]
     ll_l = ll_l[::-1]
     burst_size_l = burst_size_l[::-1]
@@ -171,7 +171,7 @@ def burst_size_ll(vals, start_estim):
             if (2*(ll_u[j] - min(ll_u[ll_u > 0])) > cutoff + 0.5) and (ll_u[j] > ll_u[j-1]):
                 break
     except ValueError:
-        return np.array([minimum,np.nan,np.nan]), np.nan
+        return np.array([np.nan,np.nan,np.nan]), np.nan,np.nan
 
     ll_u = ll_u[:j+1]
 
