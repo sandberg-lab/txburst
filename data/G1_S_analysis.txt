@@ -1,0 +1,30 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (Released 20171205)
+Annotation Version and Release Date:	PANTHER version 13.1 Released 2018-02-03
+Analyzed List:	Client Text Box Input (Mus musculus)
+Reference List:	Mus musculus (all genes in database)
+Test Type:	FISHER
+PANTHER GO-Slim Biological Process	Mus musculus - REFLIST (22262)	Client Text Box Input (116)	Client Text Box Input (expected)	Client Text Box Input (over/under)	Client Text Box Input (fold Enrichment)	Client Text Box Input (raw P-value)	Client Text Box Input (FDR)
+meiosis (GO:0007126)	59	5	.31	+	16.26	2.05E-05	8.34E-04
+DNA recombination (GO:0006310)	51	4	.27	+	15.05	1.91E-04	4.23E-03
+DNA replication (GO:0006260)	140	10	.73	+	13.71	6.02E-09	7.34E-07
+chromosome segregation (GO:0007059)	86	4	.45	+	8.93	1.24E-03	2.02E-02
+DNA metabolic process (GO:0006259)	345	14	1.80	+	7.79	5.37E-09	1.31E-06
+regulation of cell cycle (GO:0051726)	175	7	.91	+	7.68	4.64E-05	1.62E-03
+respiratory electron transport chain (GO:0022904)	112	4	.58	+	6.85	3.14E-03	4.26E-02
+mitosis (GO:0007067)	204	6	1.06	+	5.64	8.01E-04	1.40E-02
+generation of precursor metabolites and energy (GO:0006091)	183	5	.95	+	5.24	3.00E-03	4.31E-02
+cell cycle (GO:0007049)	650	16	3.39	+	4.72	3.48E-07	2.83E-05
+organelle organization (GO:0006996)	1133	17	5.90	+	2.88	8.96E-05	2.43E-03
+cellular component organization (GO:0016043)	1961	23	10.22	+	2.25	2.12E-04	4.31E-03
+cellular component organization or biogenesis (GO:0071840)	2099	24	10.94	+	2.19	3.20E-04	6.01E-03
+nucleobase-containing compound metabolic process (GO:0006139)	2710	30	14.12	+	2.12	5.07E-05	1.55E-03
+nitrogen compound metabolic process (GO:0006807)	2462	27	12.83	+	2.10	1.62E-04	3.94E-03
+primary metabolic process (GO:0044238)	4839	46	25.21	+	1.82	1.35E-05	6.59E-04
+metabolic process (GO:0008152)	6009	55	31.31	+	1.76	2.87E-06	1.75E-04
+cell communication (GO:0007154)	3269	6	17.03	-	.35	2.18E-03	3.33E-02
+signal transduction (GO:0007165)	2896	5	15.09	-	.33	3.22E-03	4.14E-02

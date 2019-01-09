@@ -1,0 +1,19 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (Released 20171205)
+Annotation Version and Release Date:	PANTHER version 13.1 Released 2018-02-03
+Analyzed List:	Client Text Box Input (Mus musculus)
+Reference List:	Mus musculus (all genes in database)
+Test Type:	FISHER
+PANTHER GO-Slim Biological Process	Mus musculus - REFLIST (22262)	Client Text Box Input (75)	Client Text Box Input (expected)	Client Text Box Input (over/under)	Client Text Box Input (fold Enrichment)	Client Text Box Input (raw P-value)	Client Text Box Input (FDR)
+mitochondrial transport (GO:0006839)	43	3	.14	+	20.71	4.97E-04	3.03E-02
+DNA replication (GO:0006260)	140	4	.47	+	8.48	1.41E-03	4.31E-02
+DNA metabolic process (GO:0006259)	345	8	1.16	+	6.88	2.41E-05	5.89E-03
+nucleobase-containing compound metabolic process (GO:0006139)	2710	20	9.13	+	2.19	5.72E-04	2.79E-02
+primary metabolic process (GO:0044238)	4839	32	16.30	+	1.96	5.69E-05	6.95E-03
+metabolic process (GO:0008152)	6009	36	20.24	+	1.78	1.20E-04	9.74E-03
+multicellular organismal process (GO:0032501)	2274	0	7.66	-	 < 0.01	7.36E-04	2.56E-02
+single-multicellular organism process (GO:0044707)	2258	0	7.61	-	 < 0.01	7.20E-04	2.93E-02
