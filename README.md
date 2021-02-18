@@ -1,8 +1,6 @@
 # Genomic encoding of transcriptional burst kinetics
 Repository for transcriptional burst kinetics inference and analysis from allelic single-cell RNA-seq described in the article **Genomic encoding of transcriptional burst kinetics** by Anton J. M. Larsson, Per Johnsson, Michael Hagemann-Jensen, Leonard Hartmanis, Omid R. Faridani, Björn Reinius, Åsa Segerstolpe, Chloe M. Rivera, Bing Ren and Rickard Sandberg Nature. 2019 Jan 2. doi: [10.1038/s41586-018-0836-1](http://dx.doi.org/10.1038/s41586-018-0836-1). [Epub ahead of print].
 
-We are currently uploading Jupyter notebooks that will contain the complete analysis.
-
 ## txburst scripts
 ### System Requirements for inference and hypothesis testing scripts
 
